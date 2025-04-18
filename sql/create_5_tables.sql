@@ -1,37 +1,39 @@
-CREATE TABLE customers (
-    customer_id VARCHAR PRIMARY KEY,
-    customer_name VARCHAR,
-    segment VARCHAR
+CREATE TABLE dim_customers (
+    customer_id TEXT PRIMARY KEY,
+    customer_name TEXT,
+    segment TEXT,
+    country TEXT,
+    region TEXT
 );
-CREATE TABLE orders (
-    order_id VARCHAR PRIMARY KEY,
+
+CREATE TABLE dim_products (
+    product_id TEXT PRIMARY KEY,
+    product_name TEXT,
+    sub_category TEXT
+);
+
+CREATE TABLE dim_categories (
+    sub_category TEXT PRIMARY KEY,
+    category TEXT
+);
+
+CREATE TABLE dim_orders (
+    order_id TEXT PRIMARY KEY,
     order_date DATE,
     ship_date DATE,
-    ship_mode VARCHAR,
-    customer_id VARCHAR REFERENCES customers(customer_id),
-    country VARCHAR,
-    city VARCHAR,
-    state VARCHAR,
-    postal_code VARCHAR,
-    region VARCHAR
+    ship_mode TEXT
 );
-CREATE TABLE categories (
-    category_id SERIAL PRIMARY KEY,
-    category VARCHAR,
-    sub_category VARCHAR,
-    UNIQUE (category, sub_category)
-);
-CREATE TABLE products (
-    product_id VARCHAR PRIMARY KEY,
-    product_name VARCHAR,
-    category_id INTEGER REFERENCES categories(category_id)
-);
-CREATE TABLE sales (
+
+CREATE TABLE fact_sales (
     row_id INTEGER PRIMARY KEY,
-    order_id VARCHAR REFERENCES orders(order_id),
-    product_id VARCHAR REFERENCES products(product_id),
+    order_id TEXT REFERENCES dim_orders(order_id),
+    customer_id TEXT REFERENCES dim_customers(customer_id),
+    product_id TEXT REFERENCES dim_products(product_id),
     sales NUMERIC,
     quantity INTEGER,
     discount NUMERIC,
-    profit NUMERIC
+    profit NUMERIC,
+    city TEXT,
+    state TEXT,
+    postal_code TEXT
 );
