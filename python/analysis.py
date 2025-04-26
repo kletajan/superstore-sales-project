@@ -59,11 +59,13 @@ SELECT
     cu.segment,
     cu.region,
     p.product_name,
-    c.category
+    c.category,
+    o.order_date
 FROM fact_sales f
 JOIN dim_customers cu ON f.customer_id = cu.customer_id
 JOIN dim_products p ON f.product_id = p.product_id
-JOIN dim_categories c ON p.sub_category = c.sub_category;
+JOIN dim_categories c ON p.sub_category = c.sub_category
+JOIN dim_orders o ON f.order_id = o.order_id;
 """
 df_full = pd.read_sql(export_query, engine)
 df_full.to_csv('data/fact_sales_export.csv', index=False)
