@@ -1,0 +1,10 @@
+{
+    "name": "Superstore Theme",
+    "dataColors": [
+      "#005C9B", "#00A6ED", "#78D6F4", "#C7EFFF", "#3B9DDD", "#003B73", "#F0A500", "#F0C929"
+    ],
+    "background": "#ffffff",
+    "foreground": "#000000",
+    "tableAccent": "#005C9B"
+  }
+  
