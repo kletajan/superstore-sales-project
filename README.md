@@ -49,7 +49,36 @@ I started from raw CSV data and ended with a professional dashboard ready for de
 ![Dashboard Preview](./powerbi/dashboard_screenshot.png)
 
 ## 📁 Project Structure
-superstore-sales-project/ │ ├── data/ │ ├── fact_sales_export.csv │ ├── superstore_clean.csv │ └── Superstore.csv │ ├── powerbi/ │ ├── SuperstoreDashboard.pbix │ └── superstore_theme.json │ ├── sql/ │ ├── connect_db.sql │ ├── copy_data_from_1_to_5.sql │ ├── create_table.sql │ ├── create_5_tables.sql │ ├── monthly_sales_trend.sql │ ├── sales_by_region_and_ship.sql │ ├── top_5_customers_by_profit.sql │ └── total_sales_by_category.sql │ ├── python/ │ ├── analysis.py │ ├── clean_csv.py │ └── connect_db.py │ ├── matplotlib/ │ ├── monthly_sales_trend_chart.png │ ├── sales_by_category_chart.png │ └── top_10_customers_by_profit.png │ ├── dashboard_screenshot.png ├── database_project.pdf ├── README.md ├── req_install_script.bash └── requirements.txt
+superstore-sales-project/
+├── data/
+│   ├── fact_sales_export.csv
+│   ├── superstore_clean.csv
+│   └── Superstore.csv
+├── powerbi/
+│   ├── SuperstoreDashboard.pbix
+│   └── superstore_theme.json
+├── sql/
+│   ├── connect_db.sql
+│   ├── copy_data_from_1_to_5.sql
+│   ├── create_5_tables.sql
+│   ├── create_table.sql
+│   ├── monthly_sales_trend.sql
+│   ├── sales_by_region_and_ship.sql
+│   ├── top_5_customers_by_profit.sql
+│   └── total_sales_by_category.sql
+├── python/
+│   ├── analysis.py
+│   ├── clean_csv.py
+│   └── connect_db.py
+├── matplotlib/
+│   ├── monthly_sales_trend_chart.png
+│   ├── sales_by_category_chart.png
+│   └── top_10_customers_by_profit.png
+├── dashboard_screenshot.png
+├── database_project.pdf
+├── README.md
+├── req_install_script.bash
+└── requirements.txt
 
 ## 📚 Skills Demonstrated
 
